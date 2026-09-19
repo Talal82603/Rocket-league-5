@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Rocket Arena 3D</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game"></div>
+  <div id="loading"><div class="loader"></div><b>ROCKET ARENA 3D</b><span>Loading stadium...</span></div>
+
+  <div id="hud">
+    <div class="score blue"><span id="blueScore">0</span></div>
+    <div class="clock" id="clock">5:00</div>
+    <div class="score orange"><span id="orangeScore">0</span></div>
+    <div class="boost"><div class="boostRing"><span id="boostValue">100</span></div><label>BOOST</label></div>
+    <div class="status" id="status">PRESS PLAY</div>
+    <div class="controlsHint" id="controlsHint">WASD / ARROWS • SHIFT BOOST • SPACE JUMP • E BALL CAM</div>
+  </div>
+
+  <div id="menu" class="panel">
+    <h1>ROCKET ARENA <i>3D</i></h1>
+    <p class="sub">Arcade car soccer — desktop, controller & touch</p>
+    <button id="playBtn">PLAY MATCH</button>
+    <button id="garageBtn" class="secondary">GARAGE</button>
+    <button id="settingsBtn" class="secondary">SETTINGS</button>
+    <div class="mini">Single-player 3v3 • 5:00 • overtime • boost pads</div>
+  </div>
+
+  <div id="garage" class="panel hidden">
+    <h2>GARAGE</h2>
+    <div class="swatches" id="swatches"></div>
+    <div class="garageRow"><label>CAR</label><button data-car="sport">SPORT</button><button data-car="muscle">MUSCLE</button><button data-car="rally">RALLY</button></div>
+    <button id="garageBack" class="secondary">BACK</button>
+  </div>
+
+  <div id="settings" class="panel hidden">
+    <h2>SETTINGS</h2>
+    <label>FOV <input id="fov" type="range" min="70" max="120" value="100"></label>
+    <label>Camera Sensitivity <input id="sens" type="range" min="0.5" max="2" step="0.05" value="1"></label>
+    <label>Ball Cam <select id="ballCamMode"><option value="toggle">Toggle</option><option value="hold">Hold</option></select></label>
+    <button id="settingsBack" class="secondary">BACK</button>
+  </div>
+
+  <div id="pause" class="panel hidden">
+    <h2>PAUSED</h2>
+    <button id="resumeBtn">RESUME</button>
+    <button id="quitBtn" class="secondary">QUIT TO MENU</button>
+  </div>
+
+  <div id="touch">
+    <div id="stick"><div id="knob"></div></div>
+    <button class="touchBtn boostBtn" data-action="boost">BOOST</button>
+    <button class="touchBtn jumpBtn" data-action="jump">JUMP</button>
+    <button class="touchBtn airBtn" data-action="air">AIR</button>
+    <button class="touchBtn camBtn" data-action="cam">BALL CAM</button>
+  </div>
+
+  <script type="module" src="game.js"></script>
+</body>
+</html>
